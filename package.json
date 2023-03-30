@@ -1,4 +1,11 @@
 {
   "name": "mfa-test",
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "workspaces": [
+    "services/*"
+  ],
+  "devDependencies": {
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2"
+  }
 }
