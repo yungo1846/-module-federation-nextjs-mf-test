@@ -4,6 +4,9 @@
   "workspaces": [
     "services/*"
   ],
+  "scripts": {
+    "dev": "concurrently \"yarn workspace container dev\" \"yarn workspace counter dev\" \"yarn workspace todo dev\" "
+  },
   "devDependencies": {
     "tslib": "^2.5.0",
     "typescript": "^5.0.2"
