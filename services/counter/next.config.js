@@ -9,12 +9,13 @@ const nextConfig = {
       new NextFederationPlugin({
         name: "counter",
         remotes: {
-          home: `home@http://localhost:3000/_next/static//remoteEntry.js`,
-          todo: `todo@http://localhost:3002/_next/static//remoteEntry.js`,
+          home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
+          todo: `todo@http://localhost:3002/_next/static/chunks/remoteEntry.js`,
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./counter": "./src/pages/counter",
+          "./counterPage": "./src/pages/counter",
+          "./counterProvider": "./src/context/count",
         },
         shared: {
           // whatever else

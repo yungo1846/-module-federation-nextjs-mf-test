@@ -43,7 +43,7 @@ export function useCounter() {
   const context = useContext(CounterContext);
 
   if (context == null) {
-    throw new Error("Countㅔer Provider를 사용해주세요");
+    throw new Error("Counter Provider를 사용해주세요");
   }
 
   return context;

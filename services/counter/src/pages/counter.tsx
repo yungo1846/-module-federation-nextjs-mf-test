@@ -1,4 +1,4 @@
-import { useCounter } from "../../context/count";
+import { useCounter } from "../context/count";
 
 export default function CounterPage() {
   const { count, setCount, reset } = useCounter();
