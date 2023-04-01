@@ -1,4 +1,4 @@
-import { useCounter } from "counter/useCounter";
+import { useCounter } from "counter/counterProvider";
 
 export default function CounterPage() {
   const { count, setCount, reset } = useCounter();

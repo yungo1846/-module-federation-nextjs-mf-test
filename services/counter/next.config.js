@@ -17,7 +17,6 @@ const nextConfig = {
         exposes: {
           "./counterPage": "./src/pages/counter",
           "./counterProvider": "./src/context/count",
-          "./useCounter": "./src/hooks/useCounter",
         },
         extraOptions: {
           exposePages: true,
