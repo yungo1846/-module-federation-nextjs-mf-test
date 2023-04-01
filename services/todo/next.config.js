@@ -15,6 +15,7 @@ const nextConfig = {
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./todoPage": "./src/pages/todo",
+          "./console": "./src/utils/console",
         },
         shared: {
           // whatever else

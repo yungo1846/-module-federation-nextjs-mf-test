@@ -19,6 +19,9 @@ const nextConfig = {
         shared: {
           // whatever else
         },
+        extraOptions: {
+          automaticAsyncBoundary: true,
+        },
       })
     );
 
