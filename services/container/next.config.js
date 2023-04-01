@@ -5,6 +5,7 @@ const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, options) {
+    config.experiments = { ...config.experiments, topLevelAwait: true };
     config.plugins.push(
       new NextFederationPlugin({
         name: "container",

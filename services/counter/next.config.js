@@ -10,12 +10,17 @@ const nextConfig = {
         name: "counter",
         remotes: {
           home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
+          counter: `counter@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
           todo: `todo@http://localhost:3002/_next/static/chunks/remoteEntry.js`,
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
           "./counterPage": "./src/pages/counter",
           "./counterProvider": "./src/context/count",
+          "./useCounter": "./src/hooks/useCounter",
+        },
+        extraOptions: {
+          exposePages: true,
         },
         shared: {
           // whatever else

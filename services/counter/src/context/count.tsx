@@ -13,13 +13,13 @@ interface CounterContextProps {
   reset: () => void;
 }
 
-const CounterContext = createContext<null | CounterContextProps>(null);
+export const CounterContext = createContext<null | CounterContextProps>(null);
 
 interface CounterProviderProps {
   children: ReactNode;
 }
 
-export function CounterProvider({ children }: CounterProviderProps) {
+export default function CounterProvider({ children }: CounterProviderProps) {
   const [count, setCount] = useState(0);
 
   const reset = () => {
@@ -37,14 +37,4 @@ export function CounterProvider({ children }: CounterProviderProps) {
       {children}
     </CounterContext.Provider>
   );
-}
-
-export function useCounter() {
-  const context = useContext(CounterContext);
-
-  if (context == null) {
-    throw new Error("Counter Provider를 사용해주세요");
-  }
-
-  return context;
 }
