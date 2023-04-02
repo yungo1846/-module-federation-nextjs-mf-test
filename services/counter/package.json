@@ -21,6 +21,7 @@
     "typescript": "5.0.2"
   },
   "devDependencies": {
+    "@module-federation/typescript": "^2.3.0",
     "webpack": "^5.77.0"
   }
 }

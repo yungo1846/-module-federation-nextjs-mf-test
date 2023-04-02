@@ -1,9 +1,10 @@
 import dynamic from "next/dynamic";
+import TodoPageType from "@mf-types/todo/todoPage";
 
-const Todo = dynamic(() => import("todo/todoPage"), { ssr: false });
-import consoleHi from "todo/console";
+const Todo = dynamic(() => import("todo/todoPage"), {
+  ssr: false,
+}) as unknown as typeof TodoPageType;
 
 export default function CounterPage() {
-  consoleHi();
   return <Todo />;
 }

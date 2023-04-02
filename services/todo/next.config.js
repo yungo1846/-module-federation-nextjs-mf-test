@@ -1,26 +1,41 @@
 /** @type {import('next').NextConfig} */
 
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
+const { FederatedTypesPlugin } = require("@module-federation/typescript");
 
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, options) {
+    const federationConfig = {
+      name: "todo",
+      filename: "static/chunks/remoteEntry.js",
+      exposes: {
+        "./todoPage": "./src/pages/todo",
+        "./console": "./src/utils/console",
+      },
+      shared: {
+        // whatever else
+      },
+    };
+    const NextFederationConfig = {
+      name: "todo",
+      remotes: {
+        home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
+        counter: `counter@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
+      },
+      filename: "static/chunks/remoteEntry.js",
+      exposes: {
+        "./todoPage": "./src/pages/todo",
+        "./console": "./src/utils/console",
+      },
+      shared: {
+        // whatever else
+      },
+    };
+
     config.plugins.push(
-      new NextFederationPlugin({
-        name: "todo",
-        remotes: {
-          home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
-          counter: `counter@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
-        },
-        filename: "static/chunks/remoteEntry.js",
-        exposes: {
-          "./todoPage": "./src/pages/todo",
-          "./console": "./src/utils/console",
-        },
-        shared: {
-          // whatever else
-        },
-      })
+      new FederatedTypesPlugin({ federationConfig }),
+      new NextFederationPlugin(NextFederationConfig)
     );
 
     return config;
