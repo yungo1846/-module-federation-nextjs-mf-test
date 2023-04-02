@@ -27,6 +27,7 @@ const { useCounter } = (await import("counter/counterProvider")) as unknown as {
 export default function CounterPage() {
   return (
     <CounterProvider>
+      <div>container's counter</div>
       <Counter />
       <HostCounter />
     </CounterProvider>

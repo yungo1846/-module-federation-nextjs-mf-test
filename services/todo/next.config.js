@@ -31,6 +31,9 @@ const nextConfig = {
       shared: {
         // whatever else
       },
+      extraOptions: {
+        exposePages: true,
+      },
     };
 
     config.plugins.push(

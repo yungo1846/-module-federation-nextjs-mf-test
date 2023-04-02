@@ -26,6 +26,9 @@ const nextConfig = {
         "./counterPage": "./src/pages/counter",
         "./counterProvider": "./src/context/count",
       },
+      extraOptions: {
+        exposePages: true,
+      },
     };
 
     config.plugins.push(

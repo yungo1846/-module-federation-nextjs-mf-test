@@ -1,2 +1,3 @@
 /// <reference types="react" />
-export default function CounterPage(): JSX.Element;
+export declare function CounterPage(): JSX.Element;
+export default function Page(): JSX.Element;

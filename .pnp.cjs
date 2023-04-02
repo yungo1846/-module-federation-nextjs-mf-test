@@ -16,6 +16,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "nextjs-shared",\
+        "reference": "workspace:packages/nextjs-shared"\
+      },\
+      {\
         "name": "container",\
         "reference": "workspace:services/container"\
       },\
@@ -34,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["container", ["workspace:services/container"]],\
       ["counter", ["workspace:services/counter"]],\
       ["mfa-test", ["workspace:."]],\
+      ["nextjs-shared", ["virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#workspace:packages/nextjs-shared", "workspace:packages/nextjs-shared"]],\
       ["todo", ["workspace:services/todo"]]\
     ],\
     "fallbackPool": [\
@@ -1506,6 +1511,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.37.0"],\
             ["eslint-config-next", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#npm:13.2.4"],\
             ["next", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#npm:13.2.4"],\
+            ["nextjs-shared", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#workspace:packages/nextjs-shared"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#npm:18.2.0"],\
             ["typescript", "patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=85af82"],\
@@ -2319,6 +2325,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["fastq", "npm:1.15.0"],\
             ["reusify", "npm:1.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["feather-route-matcher", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/feather-route-matcher-npm-4.0.0-f9261bc814-036fdd59c2.zip/node_modules/feather-route-matcher/",\
+          "packageDependencies": [\
+            ["feather-route-matcher", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -3453,6 +3468,30 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "sass"\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["nextjs-shared", [\
+        ["virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#workspace:packages/nextjs-shared", {\
+          "packageLocation": "./.yarn/__virtual__/nextjs-shared-virtual-89ac4fe853/1/packages/nextjs-shared/",\
+          "packageDependencies": [\
+            ["nextjs-shared", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#workspace:packages/nextjs-shared"],\
+            ["@module-federation/nextjs-mf", "virtual:c5343bab9edd5d1a888a722022f884477da158ceefaf019dd30c53a246d620314fa28417435307b7b35902efbfe7c4da770f50e9fdd62ab74870e5a6d4270020#npm:6.2.2"],\
+            ["@types/module-federation__nextjs-mf", null],\
+            ["feather-route-matcher", "npm:4.0.0"]\
+          ],\
+          "packagePeers": [\
+            "@module-federation/nextjs-mf",\
+            "@types/module-federation__nextjs-mf"\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["workspace:packages/nextjs-shared", {\
+          "packageLocation": "./packages/nextjs-shared/",\
+          "packageDependencies": [\
+            ["nextjs-shared", "workspace:packages/nextjs-shared"],\
+            ["feather-route-matcher", "npm:4.0.0"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["node-fetch", [\

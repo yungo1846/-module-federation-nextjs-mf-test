@@ -2,7 +2,8 @@
   "name": "mfa-test",
   "packageManager": "yarn@3.5.0",
   "workspaces": [
-    "services/*"
+    "services/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "concurrently \"yarn workspace container dev\" \"yarn workspace counter dev\" \"yarn workspace todo dev\" "

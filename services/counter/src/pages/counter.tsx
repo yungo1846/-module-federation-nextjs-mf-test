@@ -1,10 +1,11 @@
-import { useCounter } from "counter/counterProvider";
+import CounterProvider, { useCounter } from "counter/counterProvider";
 
-export default function CounterPage() {
+export function CounterPage() {
   const { count, setCount, reset } = useCounter();
 
   return (
     <div>
+      <div>counter's counter</div>
       <button
         onClick={() => {
           setCount((count) => count + 1);
@@ -28,5 +29,13 @@ export default function CounterPage() {
         reset
       </button>
     </div>
+  );
+}
+
+export default function Page() {
+  return (
+    <CounterProvider>
+      <CounterPage />
+    </CounterProvider>
   );
 }

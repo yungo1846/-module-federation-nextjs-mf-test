@@ -1159,6 +1159,7 @@ __metadata:
     eslint: 8.37.0
     eslint-config-next: 13.2.4
     next: 13.2.4
+    nextjs-shared: "workspace:^"
     react: 18.2.0
     react-dom: 18.2.0
     typescript: 5.0.2
@@ -1788,6 +1789,13 @@ __metadata:
   dependencies:
     reusify: ^1.0.4
   checksum: 0170e6bfcd5d57a70412440b8ef600da6de3b2a6c5966aeaf0a852d542daff506a0ee92d6de7679d1de82e644bce69d7a574a6c93f0b03964b5337eed75ada1a
+  languageName: node
+  linkType: hard
+
+"feather-route-matcher@npm:4.0.0":
+  version: 4.0.0
+  resolution: "feather-route-matcher@npm:4.0.0"
+  checksum: 036fdd59c2c7f4a3829c509fc7ec60e0a211dcb5619ffdc12742142edd439ab22070d11758215d781281537048ed52cf5c3bc27810ef6dca47151e9b2df03379
   languageName: node
   linkType: hard
 
@@ -2806,6 +2814,16 @@ __metadata:
   checksum: 8531dee41b60181b582f5ee80858907b102f083ef8808ff9352d589dd39e6b3a96f7a11b3776a03eef3a28430cff768336fa2e3ff2c6f8fcd699fbc891749051
   languageName: node
   linkType: hard
+
+"nextjs-shared@workspace:^, nextjs-shared@workspace:packages/nextjs-shared":
+  version: 0.0.0-use.local
+  resolution: "nextjs-shared@workspace:packages/nextjs-shared"
+  dependencies:
+    feather-route-matcher: 4.0.0
+  peerDependencies:
+    "@module-federation/nextjs-mf": ^6
+  languageName: unknown
+  linkType: soft
 
 "node-fetch@npm:2.6.7":
   version: 2.6.7

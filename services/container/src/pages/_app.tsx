@@ -16,6 +16,8 @@ function Header() {
     <div className={styles.header}>
       <Link href={"/todo"}>todo</Link>
       <Link href={"/counter"}>counter</Link>
+      <Link href={"/container-todo"}>container-todo</Link>
+      <Link href={"/container-counter"}>container-counter</Link>
     </div>
   );
 }

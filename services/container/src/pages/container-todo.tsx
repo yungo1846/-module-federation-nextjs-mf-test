@@ -6,5 +6,10 @@ const Todo = dynamic(() => import("todo/todoPage"), {
 }) as unknown as typeof TodoPageType;
 
 export default function CounterPage() {
-  return <Todo />;
+  return (
+    <div>
+      <div>container's todo</div>
+      <Todo />
+    </div>
+  );
 }
