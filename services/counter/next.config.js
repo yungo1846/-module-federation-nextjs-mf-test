@@ -3,9 +3,11 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 const { FederatedTypesPlugin } = require("@module-federation/typescript");
 
+const s3 = "https://mfa-test-2023.s3.ap-northeast-2.amazonaws.com";
+
 const nextConfig = {
   reactStrictMode: true,
-  webpack(config, options) {
+  webpack(config, { dev }) {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     const federationConfig = {
       name: "counter",
@@ -18,9 +20,12 @@ const nextConfig = {
     const NextFederationConfig = {
       name: "counter",
       remotes: {
-        home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
-        counter: `counter@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
-        todo: `todo@http://localhost:3002/_next/static/chunks/remoteEntry.js`,
+        container: `container@${
+          dev ? "http://localhost:3000" : `${s3}/container`
+        }/_next/static/chunks/remoteEntry.js`,
+        counter: `counter@${
+          dev ? "http://localhost:3001" : `${s3}/counter`
+        }/_next/static/chunks/remoteEntry.js`,
       },
       filename: "static/chunks/remoteEntry.js",
       exposes: {

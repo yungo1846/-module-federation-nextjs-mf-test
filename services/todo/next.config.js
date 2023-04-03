@@ -3,9 +3,11 @@
 const { NextFederationPlugin } = require("@module-federation/nextjs-mf");
 const { FederatedTypesPlugin } = require("@module-federation/typescript");
 
+const s3 = "https://mfa-test-2023.s3.ap-northeast-2.amazonaws.com";
+
 const nextConfig = {
   reactStrictMode: true,
-  webpack(config, options) {
+  webpack(config, { dev }) {
     config.experiments = { ...config.experiments, topLevelAwait: true };
     const federationConfig = {
       name: "todo",
@@ -20,10 +22,6 @@ const nextConfig = {
     };
     const NextFederationConfig = {
       name: "todo",
-      remotes: {
-        home: `home@http://localhost:3000/_next/static/chunks/remoteEntry.js`,
-        counter: `counter@http://localhost:3001/_next/static/chunks/remoteEntry.js`,
-      },
       filename: "static/chunks/remoteEntry.js",
       exposes: {
         "./todoPage": "./src/pages/todo",
@@ -47,8 +45,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: "export",
-  distDir: "dist",
 };
 
 module.exports = nextConfig;
