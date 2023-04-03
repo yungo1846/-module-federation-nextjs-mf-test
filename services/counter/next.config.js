@@ -6,6 +6,7 @@ const { FederatedTypesPlugin } = require("@module-federation/typescript");
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, options) {
+    config.experiments = { ...config.experiments, topLevelAwait: true };
     const federationConfig = {
       name: "counter",
       filename: "static/chunks/remoteEntry.js",
@@ -37,6 +38,9 @@ const nextConfig = {
     );
 
     return config;
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 

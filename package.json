@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"yarn workspace container dev\" \"yarn workspace counter dev\" \"yarn workspace todo dev\" "
+    "dev": "concurrently \"yarn workspace container dev\" \"yarn workspace counter dev\" \"yarn workspace todo dev\" ",
+    "build": "concurrently \"yarn workspace container build\" \"yarn workspace counter build\" \"yarn workspace todo build\" "
   },
   "devDependencies": {
     "@swc/helpers": "^0.4.14",

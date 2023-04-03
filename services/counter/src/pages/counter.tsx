@@ -1,4 +1,13 @@
-import CounterProvider, { useCounter } from "counter/counterProvider";
+import dynamic from "next/dynamic";
+
+const CounterProvider = dynamic(
+  async () => await import("counter/counterProvider"),
+  {
+    ssr: false,
+  }
+);
+
+const { useCounter } = await import("counter/counterProvider");
 
 export function CounterPage() {
   const { count, setCount, reset } = useCounter();
