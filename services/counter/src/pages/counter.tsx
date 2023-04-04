@@ -1,41 +1,13 @@
-import CounterProvider, { useCounter } from "counter/counterProvider";
+import dynamic from "next/dynamic";
+const CounterProvider = dynamic(() => import("counter/counterProvider"), {
+  ssr: false,
+});
+const Counter = dynamic(() => import("@/components/counter"), { ssr: false });
 
-export function CounterPage() {
-  const { count, setCount, reset } = useCounter();
-
-  return (
-    <div>
-      <div>counter's counter</div>
-      <button
-        onClick={() => {
-          setCount((count) => count + 1);
-        }}
-      >
-        +
-      </button>
-      <div>counter: {count}</div>
-      <button
-        onClick={() => {
-          setCount((count) => count - 1);
-        }}
-      >
-        -
-      </button>
-      <button
-        onClick={() => {
-          reset();
-        }}
-      >
-        reset
-      </button>
-    </div>
-  );
-}
-
-export default function Page() {
+export default function CounterPage() {
   return (
     <CounterProvider>
-      <CounterPage />
+      <Counter />
     </CounterProvider>
   );
 }

@@ -4,7 +4,7 @@ import CounterProviderType, {
   useCounter as UseCounter,
 } from "@mf-types/counter/counterProvider";
 
-const Counter = dynamic(() => import("counter/counterPage"), {
+const Counter = dynamic(() => import("counter/counter"), {
   ssr: false,
 }) as unknown as typeof CounterPageType;
 const CounterProvider = dynamic(

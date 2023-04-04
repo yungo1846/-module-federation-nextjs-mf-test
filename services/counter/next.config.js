@@ -15,6 +15,7 @@ const nextConfig = {
       exposes: {
         "./counterPage": "./src/pages/counter",
         "./counterProvider": "./src/context/count",
+        "./counter": "./src/components/counter",
       },
     };
     const NextFederationConfig = {
@@ -31,6 +32,7 @@ const nextConfig = {
       exposes: {
         "./counterPage": "./src/pages/counter",
         "./counterProvider": "./src/context/count",
+        "./counter": "./src/components/counter",
       },
       extraOptions: {
         exposePages: true,

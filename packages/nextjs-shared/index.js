@@ -56,6 +56,9 @@ module.exports = {
     const FederatedCatchAll = (initialProps) => {
       const [lazyProps, setProps] = React.useState({});
 
+      console.log("lazyProps:", lazyProps);
+      console.log("initialProps:", initialProps);
+
       const { FederatedPage, render404, renderError, needsReload, ...props } = {
         ...lazyProps,
         ...initialProps,
