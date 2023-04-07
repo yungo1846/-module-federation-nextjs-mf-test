@@ -2010,6 +2010,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/mime-types", [\
+        ["npm:2.1.1", {\
+          "packageLocation": "./.yarn/cache/@types-mime-types-npm-2.1.1-2f761de0b8-106b5d556a.zip/node_modules/@types/mime-types/",\
+          "packageDependencies": [\
+            ["@types/mime-types", "npm:2.1.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/minimist", [\
         ["npm:1.2.2", {\
           "packageLocation": "./.yarn/cache/@types-minimist-npm-1.2.2-a445de65da-b8da83c66e.zip/node_modules/@types/minimist/",\
@@ -2994,7 +3003,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["deploy", "workspace:packages/deploy"],\
             ["@aws-sdk/client-s3", "npm:3.306.0"],\
+            ["@types/mime-types", "npm:2.1.1"],\
             ["dotenv", "npm:16.0.3"],\
+            ["mime-types", "npm:2.1.35"],\
             ["ts-loader", "virtual:b9cb69b74cb971ff90a0f495ef31d5094a7dd8294831fb4ddfa9a934eb03a5fe9a13edd3e2a2995f1a084062fd14ee670fb64f21ca568bd3e38b31b23b147d55#npm:9.4.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.3#~builtin<compat/typescript>::version=5.0.3&hash=85af82"],\
             ["zx", "npm:7.2.1"]\

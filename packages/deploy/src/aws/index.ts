@@ -1,6 +1,11 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import {
+  S3Client,
+  PutObjectCommand,
+  PutObjectCommandInput,
+} from "@aws-sdk/client-s3";
 import path from "path";
 import fs from "fs";
+import mime from "mime-types";
 
 export const uploadDirectoryToS3 = async ({
   bucketName,
@@ -33,10 +38,14 @@ export const uploadDirectoryToS3 = async ({
       });
     } else {
       const fileStream = fs.createReadStream(filePath);
-      const uploadParams = {
+      const mimeType = mime.lookup(filePath);
+      const contentType = mimeType ? mimeType : undefined;
+      const uploadParams: PutObjectCommandInput = {
+        ACL: "public-read",
         Bucket: bucketName,
         Key: s3Key,
         Body: fileStream,
+        ContentType: contentType,
       };
       const command = new PutObjectCommand(uploadParams);
       await s3Client.send(command);

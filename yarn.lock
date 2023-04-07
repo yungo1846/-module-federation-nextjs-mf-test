@@ -1694,6 +1694,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mime-types@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "@types/mime-types@npm:2.1.1"
+  checksum: 106b5d556add46446a579ad25ff15d6b421851790d887edcad558c90c1e64b1defc72bfbaf4b08f208916e21d9cc45cdb951d77be51268b18221544cfe054a3c
+  languageName: node
+  linkType: hard
+
 "@types/minimist@npm:^1.2.2":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
@@ -2481,7 +2488,9 @@ __metadata:
   resolution: "deploy@workspace:packages/deploy"
   dependencies:
     "@aws-sdk/client-s3": ^3.306.0
+    "@types/mime-types": ^2.1.1
     dotenv: ^16.0.3
+    mime-types: ^2.1.35
     ts-loader: ^9.4.2
     typescript: ^5.0.3
     zx: ^7.2.1
@@ -3913,7 +3922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27":
+"mime-types@npm:^2.1.12, mime-types@npm:^2.1.27, mime-types@npm:^2.1.35":
   version: 2.1.35
   resolution: "mime-types@npm:2.1.35"
   dependencies:
