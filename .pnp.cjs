@@ -2993,6 +2993,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["deploy", "workspace:packages/deploy"],\
             ["@aws-sdk/client-s3", "npm:3.306.0"],\
+            ["dotenv", "npm:16.0.3"],\
             ["ts-loader", "virtual:b9cb69b74cb971ff90a0f495ef31d5094a7dd8294831fb4ddfa9a934eb03a5fe9a13edd3e2a2995f1a084062fd14ee670fb64f21ca568bd3e38b31b23b147d55#npm:9.4.2"],\
             ["typescript", "patch:typescript@npm%3A5.0.3#~builtin<compat/typescript>::version=5.0.3&hash=85af82"],\
             ["zx", "npm:7.2.1"]\
@@ -3024,6 +3025,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["doctrine", "npm:3.0.0"],\
             ["esutils", "npm:2.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["dotenv", [\
+        ["npm:16.0.3", {\
+          "packageLocation": "./.yarn/cache/dotenv-npm-16.0.3-4cc29121dc-afcf03f373.zip/node_modules/dotenv/",\
+          "packageDependencies": [\
+            ["dotenv", "npm:16.0.3"]\
           ],\
           "linkType": "HARD"\
         }]\

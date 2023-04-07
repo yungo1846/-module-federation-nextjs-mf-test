@@ -12,6 +12,7 @@
     "zx": "^7.2.1"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.306.0"
+    "@aws-sdk/client-s3": "^3.306.0",
+    "dotenv": "^16.0.3"
   }
 }
