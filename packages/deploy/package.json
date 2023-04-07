@@ -4,10 +4,14 @@
   "scripts": {
     "build": "tsc --build --clean && tsc"
   },
+  "bin": "./dist/index.js",
   "packageManager": "yarn@3.5.0",
   "devDependencies": {
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.3",
     "zx": "^7.2.1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.306.0"
   }
 }
