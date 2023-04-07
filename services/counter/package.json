@@ -6,7 +6,8 @@
     "dev": "next dev --port=3001",
     "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "deploy"
   },
   "dependencies": {
     "@module-federation/nextjs-mf": "^6.2.2",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@module-federation/typescript": "^2.3.0",
+    "deploy": "workspace:^",
     "webpack": "^5.77.0"
   }
 }
