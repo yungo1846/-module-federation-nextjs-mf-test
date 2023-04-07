@@ -1,0 +1,13 @@
+{
+  "name": "deploy",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --build --clean && tsc"
+  },
+  "packageManager": "yarn@3.5.0",
+  "devDependencies": {
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.3",
+    "zx": "^7.2.1"
+  }
+}
