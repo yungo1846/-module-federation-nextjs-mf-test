@@ -31,8 +31,8 @@ jobs:
       - name: create dotenv
         run: |
          touch .env
-         echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY1 }}" >> .env
-         echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY2 }}" >> .env
+         echo "AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" >> .env
+         echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> .env
          cat .env
 
       - name: Build & Deploy
