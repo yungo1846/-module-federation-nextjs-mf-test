@@ -13,6 +13,7 @@
     "zx": "^7.2.1"
   },
   "dependencies": {
+    "@aws-sdk/client-cloudfront": "^3.309.0",
     "@aws-sdk/client-s3": "^3.306.0",
     "dotenv": "^16.0.3",
     "mime-types": "^2.1.35"

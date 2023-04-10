@@ -1,6 +1,6 @@
 import * as dotenv from "dotenv";
 import { $ } from "zx";
-import { uploadDirectoryToS3 } from "./aws/index.js";
+import { createInvalidation, uploadDirectoryToS3 } from "./aws/index.js";
 import fs from "fs";
 import { getPackageJson } from "./util/getPackageJson.js";
 
@@ -16,6 +16,8 @@ async function Command() {
     folderPath: "./out",
     s3FolderName: getPackageJson().name,
   });
+
+  await createInvalidation();
 }
 
 Command();
