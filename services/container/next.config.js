@@ -43,6 +43,7 @@ const nextConfig = (phase) => {
 
       return config;
     },
+    trailingSlash: true,
     basePath: isDev ? "" : "/container",
     typescript: {
       ignoreBuildErrors: true,
