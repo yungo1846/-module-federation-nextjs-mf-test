@@ -12,10 +12,6 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     runs-on: ubuntu-latest
-    
-    env:
-      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,8 +24,15 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      
+          
       - run: yarn install
+      
+      # .env 생성
+      - name: create dotenv
+        run: |
+         touch .env
+         echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY1 }}" >> .env
+         echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY2 }}" >> .env
 
       - name: Build & Deploy
         run: yarn workspaces since run "deploy" $(git rev-parse HEAD^)
