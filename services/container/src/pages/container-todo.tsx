@@ -8,7 +8,7 @@ const Todo = dynamic(() => import("todo/todoPage"), {
 export default function CounterPage() {
   return (
     <div>
-      <div>container's todo</div>
+      <div>container's todo 123</div>
       <Todo />
     </div>
   );
