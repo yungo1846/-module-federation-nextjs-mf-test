@@ -33,6 +33,7 @@ jobs:
          touch .env
          echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY1 }}" >> .env
          echo "AWS_ACCESS_KEY=${{ secrets.YOUR_KEY2 }}" >> .env
+         cat .env
 
       - name: Build & Deploy
         run: yarn workspaces since run "deploy" $(git rev-parse HEAD^)
